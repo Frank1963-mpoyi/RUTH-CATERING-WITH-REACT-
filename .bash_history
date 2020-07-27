@@ -13,3 +13,4 @@ git init
 git commit -m "first commit"
 git remote add origin https://github.com/Frank1963-mpoyi/paul.git
 git push -u origin master
+git commit -m 'first commit'
