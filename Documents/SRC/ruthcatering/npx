@@ -1,0 +1,5 @@
+The directory . contains files that could conflict:
+
+  npx
+
+Either try using a new directory name, or remove the files listed above.
