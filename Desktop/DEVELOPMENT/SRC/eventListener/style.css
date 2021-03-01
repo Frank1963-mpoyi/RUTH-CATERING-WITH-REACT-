@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input{
+    position: absolute;
+    left: 40%;
+    top: 200px;
+
+    display: inline-block;
+    text-transform: lowercase;
+    
+    margin-top: 20px ;
+    text-align: center;
+    
+    width: 100px;
+}

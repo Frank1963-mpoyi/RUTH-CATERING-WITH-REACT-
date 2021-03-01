@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title> EVENT LISTERNER </title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+
+</head>
+
+<body>
+    
+    <div class="container mt-5">
+        <!-- this button is when I click I want to show text in the empty div below -->
+        <button type="submit" class="btn btn-outline-info "> CLICK TO SEE THE WARNING </button>
+        
+
+
+
+
+        <!-- this div is empty is where I will display my text from javascript -->
+        
+        <div class="display">
+
+            <!-- empty content I want to display content fron javascript -->
+        
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+
+        // grab first the button class
+        const button = document.querySelector('.btn')
+        button.addEventListener('click' , ()=>{
+            // console.log ('yes displayed')
+            
+            // now target the div element to display the text in the browser
+            document.querySelector('.display').innerHTML = '<h1 class="mt-5 text-center bg-warning"> JESUS REVIENT BIENTOT BE READY FOR THE RAPTURE </h1>'
+        })
+
+
+
+    </script>
+</body>
+
+</html>
