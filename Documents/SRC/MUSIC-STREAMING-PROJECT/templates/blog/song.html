@@ -1,0 +1,35 @@
+{% extends  'main.html' %}
+
+
+{% block content %}
+
+<style>
+    .col-md-4 img {
+        width: 300px;
+        height: 250px;
+
+    }
+</style>
+
+<div class="container my-5">
+
+    {% for i in song %}
+    <div class="card mb-3" style="max-width: 940px;">
+        <div class="row g-0">
+        <div class="col-md-4">
+            <img src="{{ i.images.url }}" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+            <h5 class="card-title text-info">{{ i.name }}</h5>
+            <p class="card-text">{{ i.tags }}</p>
+            <!-- <p class="card-text"><small class="text-muted"> Listen </small></p> -->
+            <a href="{% url 'song_post' i.pk %}"> <button type="submit" class="btn btn-outline-danger"> Listen Song</button>  </a>
+            </div>
+        </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

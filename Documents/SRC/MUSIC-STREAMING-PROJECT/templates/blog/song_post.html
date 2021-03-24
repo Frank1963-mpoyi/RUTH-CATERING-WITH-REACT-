@@ -1,0 +1,26 @@
+{% extends  'main.html' %}
+
+
+{% block content %}
+
+
+<div class="container mt-5" >
+    <div class="row my-5">
+        <div class="col-md-4">
+            <img src="{{ item.images.url }}" height="250" width="350" alt="">
+        </div>
+        <div class="col-md-8">
+            <h2 class="font-weight-bold">Title: {{ item.name }}</h2>
+            <h5 class="font-weight-bold">Category: {{ item.tags }}</h5>
+            <h5 class="font-weight-bold">Movie:  {{ item.movie }}</h5>
+            <h5 class="font-weight-bold">Singer:  {{ item.singer }}</h5>
+            <h5 class="font-weight-bold">Credit: <a href="{{ item.credit }}" target= "blank_">Click here</a> </h5>
+    
+            <audio controls autoplay  >
+                <source src="{{ item.song.url }}" type="audio/mp3"> 
+            </audio><br>
+            <a href="{{ item.song.url }}"> <button class="btn btn-danger">Download A Song </button></a>
+        </div>
+    </div>
+</div>
+{% endblock content %}
