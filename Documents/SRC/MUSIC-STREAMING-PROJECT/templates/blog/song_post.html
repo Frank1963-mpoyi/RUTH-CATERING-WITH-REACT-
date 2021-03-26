@@ -3,6 +3,17 @@
 
 {% block content %}
 
+{% if message %}
+<script>
+    Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Your work has been saved',
+    showConfirmButton: false,
+    timer: 1500
+    })
+</script>
+{% endif %}
 
 <div class="container mt-5" >
     <div class="row my-5">
@@ -16,9 +27,19 @@
             <h5 class="font-weight-bold">Singer:  {{ item.singer }}</h5>
             <h5 class="font-weight-bold">Credit: <a href="{{ item.credit }}" target= "blank_">Click here</a> </h5>
     
-            <audio controls autoplay  >
+            <audio controls autoplay muted >
                 <source src="{{ item.song.url }}" type="audio/mp3"> 
             </audio><br>
+
+                <form action="/musicBeats/watchlater" method="POST" class="d-inline-block">
+                    {% csrf_token %}
+                    <input type="hidden" name="video_id" value="{{ item.song_id }}">
+                    <!-- no need to type value the value is the model id in database -->
+                    <button type="submit" class="btn btn-danger ">Add To Listen Later </button>
+                </form>
+        
+            
+            
             <a href="{{ item.song.url }}"> <button class="btn btn-danger">Download A Song </button></a>
         </div>
     </div>

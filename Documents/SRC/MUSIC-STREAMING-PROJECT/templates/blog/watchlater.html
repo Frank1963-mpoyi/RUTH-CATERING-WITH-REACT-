@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+
+
+{% block content %}
+<h1 class="text-center text-danger my-5"> Watch Later </h1>
+
+
+{% if song| length < 1% %}
+<h1 class="text-center">You dont have any songs in your watchlater </h1>
+
+{% endif %}
+
+
+{% for i in song reserved %}
+<div class="card mb-3" style="max-width: 940px;">
+    <div class="row g-0">
+    <div class="col-md-4">
+        <img src="{{ i.images.url }}" alt="...">
+    </div>
+    <div class="col-md-8">
+        <div class="card-body">
+        <h5 class="card-title text-info">Name: {{ i.name }}</h5>
+        <p class="card-text">Tags: {{ i.tags }}</p>
+        <p class="card-text">Movie: {{ i.movie }}</p>
+        <!-- <p class="card-text"><small class="text-muted"> Listen </small></p> -->
+        <a href="{% url 'song_post' i.song_id %}"> <button type="submit" class="btn btn-outline-danger"> Listen Song</button>  </a>
+        </div>
+    </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}

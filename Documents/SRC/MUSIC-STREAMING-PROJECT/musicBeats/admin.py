@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Song 
+from .models import Song, Watchlater ,History 
 
 
 
 
-admin.site.register(Song)
+admin.site.register([Song, Watchlater, History ])
